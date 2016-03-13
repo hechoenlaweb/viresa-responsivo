@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    include ./includes/header.jade
+  body
+    .mensaje Para seguir navegandon, gira tu celular.
+    main#content.portrait
+      section#contentSection
+        include ./includes/home.jade
+      //top menu
+      section
+        nav.menu
+          include ./includes/menu.jade
+        //left menu
+      section
+        nav.menu
+          include ./includes/menuLateral.jade
+        //general content

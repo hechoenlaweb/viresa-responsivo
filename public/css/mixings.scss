@@ -1,0 +1,49 @@
+@mixin corner($arc) {
+    -moz-border-radius: $arc;
+    -webkit-border-radius: $arc;
+    -ms-border-radius: $arc;
+    border-radius: $arc;
+}
+@mixin prefix($propertie,$value){
+ -webkit-#{$propertie}: #{$value};
+ -moz-#{$propertie}: #{$value};
+ -o-#{$propertie}: #{$value};
+ -ms-#{$propertie}: #{$value};
+ #{$propertie}: #{$value};
+}
+@mixin prefixCalc($propertie,$value){
+ #{$propertie}: -webkit-calc(#{$value});
+ #{$propertie}: -moz-calc(#{$value});
+ #{$propertie}: -o-calc(#{$value});
+ #{$propertie}: -ms-calc(#{$value});
+ #{$propertie}: calc(#{$value});
+}
+@mixin percents($percentW,$percentH,$subtractW,$subtractH, $properties){
+  //$subtractWCalc: $subtractW/2;
+  //$subtractHCalc: $subtractH/2;
+  $subtractWCalc: $subtractW;
+  $subtractHCalc: $subtractH;
+  //////////////////////////////
+  $mobile: false;
+  @each $key,$value in $properties {
+    //number of list
+     @if $key == 'mobile' and  $value == true{
+     $mobile: true;
+      }
+  }
+ //All to 100%
+    @if $mobile {
+      top: $subtractHCalc;
+      //$subtractWCalc:$subtractWCalc+$subtractWCalc;
+      @include prefixCalc(width,(#{$percentW}));
+      @include prefixCalc(height,(#{$percentW} - #{$subtractHCalc} ));
+    }@else{
+      left: $subtractWCalc;
+      top:$subtractHCalc;
+      $subtractWCalc:$subtractWCalc*2;
+      $subtractHCalc:$subtractHCalc*2;
+      @include prefixCalc(width,(#{$percentW} - #{$subtractWCalc}));
+      @include prefixCalc(height,(#{$percentH} - #{$subtractHCalc}));
+    }
+//////////////////////////////
+}

@@ -1,0 +1,138 @@
+//375*677
+$landscapeiPhone:'(max-width:767px) and (max-height: 480px)';
+$refreshPercent:'(min-width:100px)';
+$extraSmall:'(max-width:767px)';
+$small:'(min-width:768px) and (max-width:991px)';
+$medium:'(min-width:992px) and (max-width:1199px)';
+$large:'(min-width:1200px)';
+@media #{$extraSmall}{
+  $surplus:60px;
+   #home{
+  	$properties: ('mobile':true);
+  	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+   #topMenu{
+    margin-left:0;
+    opacity: 0;
+  }
+  #leftMenu{
+    opacity: 0;
+  }
+  .backgroundHome{
+    background: url('../img/home-mobile.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+}
+@media #{$small}{
+  $surplus:60px;
+   #home{
+   $properties: ('mobile':false);
+  	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+   #topMenu{
+    margin-left:$surplus;
+    opacity: 1;
+    font-size: 2.6em;
+
+  }
+  #leftMenu{
+    margin-left: 30px;
+    font-size: 1.8em;
+    opacity: 1;
+  }
+  .backgroundHome{
+    background: url('../img/home.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+}
+@media #{$medium}{
+  $surplus:40px;
+   #home{
+    $properties: ('mobile':false);
+  	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  #topMenu{
+    margin-left:$surplus;
+    opacity: 1;
+  }
+  #leftMenu{
+    margin-left: 20px;
+    opacity: 1;
+  }
+  .backgroundHome{
+    background: url('../img/home.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+}
+@media #{$large}{
+  $surplus:40px;
+  #home{
+  	$properties: ('mobile':false);
+  	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  #topMenu{
+    margin-left:$surplus;
+    opacity: 1;
+  }
+  #leftMenu{
+    margin-left: 20px;
+    opacity: 1;
+  }
+  .backgroundHome{
+    background: url('../img/home.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+
+}
+@media #{$landscapeiPhone} {
+  //Landscape 667/375 - Portrait 375/559
+    $surplus:0px;
+    #home{
+    	$properties: ('mobile':false);
+    	@include percents(100%,100%,$surplus,$surplus,$properties);
+    }
+  	.menu{
+    	display: none;
+  	}
+  	.backgroundHome{
+      background: url('../img/home-mobile-landscape.jpg') no-repeat center center fixed;
+      @include prefix('background-size','cover');
+     }
+     .portrait{
+
+       @include prefix('filter','blur(6px)');
+     }
+     .mensaje{
+       @include prefix('animation','textoAnim 1300ms forwards ease-in-out');
+
+       display: block;
+     }
+}
+@keyframes textoAnim{
+  //from to
+  0%{
+    transform: scale(.8);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    //@include corner(0px);
+  }
+}
+
+/*
+
+@media screen and (orientation:portrait) {
+   .swiper-slide{
+     width: 100%;
+     height: 100%;
+  }
+}
+@media screen and (orientation:landscape) {
+   .swiper-slide{
+     width: 100%;
+     height: 100%;
+  }
+}
+*/
+
