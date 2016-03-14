@@ -6,7 +6,7 @@ $small:'(min-width:768px) and (max-width:991px)';
 $medium:'(min-width:992px) and (max-width:1199px)';
 $large:'(min-width:1200px)';
 @media #{$extraSmall}{
-  $surplus:60px;
+  $surplus:0px;
    #home{
   	$properties: ('mobile':true);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
@@ -21,6 +21,32 @@ $large:'(min-width:1200px)';
   .backgroundHome{
     background: url('../img/home-mobile.jpg') no-repeat center center fixed;
      @include prefix('background-size','cover');
+  }
+  .backgroundAboutUs{
+    background: url('../img/about-us-mobile.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+   .backgroundAboutUs2{
+    background: url('../img/about-us-2.jpg') no-repeat center center;
+     @include prefix('background-size','cover');
+  }
+  .fullMenuLinks{
+    width: 85%;
+  }
+  .seccionLink{
+    margin-bottom: 30px;
+    font-size: 1.2em;
+
+  }
+  .logoRojo{
+    width: 150px;
+    height: 150px;
+  }
+  .close{
+   width: 60px;
+   height: 60px;
+   margin: 0px;
+
   }
 }
 @media #{$small}{
@@ -44,6 +70,17 @@ $large:'(min-width:1200px)';
     background: url('../img/home.jpg') no-repeat center center fixed;
      @include prefix('background-size','cover');
   }
+  .backgroundAboutUs{
+    background: url('../img/about-us.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+  .backgroundAboutUs2{
+    background: url('../img/about-us-2.jpg') no-repeat center center;
+     @include prefix('background-size','cover');
+  }
+  .fullMenuLinks{
+    width: 30%;
+  }
 }
 @media #{$medium}{
   $surplus:40px;
@@ -62,6 +99,17 @@ $large:'(min-width:1200px)';
   .backgroundHome{
     background: url('../img/home.jpg') no-repeat center center fixed;
      @include prefix('background-size','cover');
+  }
+  .backgroundAboutUs{
+    background: url('../img/about-us.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+  .backgroundAboutUs2{
+    background: url('../img/about-us-2.jpg') no-repeat center center;
+     @include prefix('background-size','cover');
+  }
+  .fullMenuLinks{
+    width: 28%;
   }
 }
 @media #{$large}{
@@ -82,36 +130,52 @@ $large:'(min-width:1200px)';
     background: url('../img/home.jpg') no-repeat center center fixed;
      @include prefix('background-size','cover');
   }
+  .backgroundAboutUs{
+    background: url('../img/about-us.jpg') no-repeat center center fixed;
+     @include prefix('background-size','cover');
+  }
+  .backgroundAboutUs2{
+    background: url('../img/about-us-2.jpg') no-repeat center center;
+     @include prefix('background-size','100%');
+  }
 
+  .fullMenuLinks{
+    width: 28%;
+  }
 }
 @media #{$landscapeiPhone} {
   //Landscape 667/375 - Portrait 375/559
-    $surplus:0px;
-    #home{
-    	$properties: ('mobile':false);
-    	@include percents(100%,100%,$surplus,$surplus,$properties);
-    }
-  	.menu{
-    	display: none;
-  	}
-  	.backgroundHome{
-      background: url('../img/home-mobile-landscape.jpg') no-repeat center center fixed;
-      @include prefix('background-size','cover');
-     }
-     .portrait{
+  $surplus:0px;
+  #home{
+  	$properties: ('mobile':false);
+  	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+	.menu{
+  	display: none;
+	}
+	.backgroundHome{
+    background: url('../img/home-mobile-landscape.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+   }
+  .portrait{
+     @include prefix('filter','blur(4px) invert(0.4)');
+   }
+  .mensaje{
+     @include prefix('animation','textoAnim 600ms forwards ease-in-out');
+     font:{
+       family: $fuente2;
+      }
 
-       @include prefix('filter','blur(6px)');
-     }
-     .mensaje{
-       @include prefix('animation','textoAnim 1300ms forwards ease-in-out');
-
-       display: block;
-     }
+     display: block;
+   }
+  .fullMenuLinks{
+    width: 28%;
+  }
 }
 @keyframes textoAnim{
   //from to
   0%{
-    transform: scale(.8);
+    transform: scale(.9);
     opacity: 0;
   }
   100%{

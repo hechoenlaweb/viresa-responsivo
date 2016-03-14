@@ -3,8 +3,11 @@ html(lang='en')
   head
     include ./includes/header.jade
   body
-    .mensaje Para seguir navegandon, gira tu celular.
+    .mensaje Para seguir navegando, gira tu celular.
     main#content.portrait
+      .fullMenu
+        .fullMenuLinks
+          include ./includes/menuLinks.jade
       section#contentSection
         include ./includes/home.jade
       //top menu

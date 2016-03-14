@@ -28,7 +28,7 @@
   @each $key,$value in $properties {
     //number of list
      @if $key == 'mobile' and  $value == true{
-     $mobile: true;
+    // $mobile: true;
       }
   }
  //All to 100%

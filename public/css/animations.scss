@@ -1,0 +1,17 @@
+///////////////Animation exit menu
+.AexitMenu{
+  @include prefix('animation','exitMenu 1s forwards ease');
+}
+@keyframes exitMenu{
+  //from to
+  0%{
+     opacity:1;
+     left: 0px;
+  }
+  100%{
+   // opacity:0;
+    left: -100%;
+
+  }
+}
+///////////////Animation exit menu

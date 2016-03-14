@@ -2,12 +2,16 @@
 ///////////////////////////////
 $marker:#18ff00;
 $rojo:rgba(172,44,63,1);
+$rojo2:rgba(172,44,63,.9);
+$blanco:rgba(255,255,255,1);
+$fuente2 : 'Comfortaa', serif;
+$fuente1 : 'Vidaloka', serif;
 ///////////////////////////////
 %show-element{
 	outline: 1px solid $marker;
 }
 div,nav{
-  //@extend %show-element;
+ @extend %show-element;
 }
 *{
 	font-size: 12px;
@@ -38,7 +42,10 @@ body{
   width: 100%;
   height: 100%;
 }
-
+.disableHard{
+ @include prefix('pointer-events',none);
+ @include prefix('user-select',none);
+}
 
 /*
 @function strip-unit($value) {
