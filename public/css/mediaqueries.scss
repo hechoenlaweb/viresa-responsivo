@@ -13,7 +13,8 @@ $large:'(min-width:1200px)';
   }
    #topMenu{
     margin-left:0;
-    opacity: 0;
+    color: rgba(255,255,255,1);
+    padding: 10px;
   }
   #leftMenu{
     opacity: 0;
@@ -34,19 +35,30 @@ $large:'(min-width:1200px)';
     width: 85%;
   }
   .seccionLink{
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 1.2em;
+
 
   }
   .logoRojo{
     width: 150px;
     height: 150px;
   }
+  .logoRojo img{
+    width: 70%;
+    height: 70%;
+  }
   .close{
    width: 60px;
    height: 60px;
    margin: 0px;
 
+  }
+#leftMenu{
+    display: none;
+  }
+  nav:first-child{
+    background-color: rgba(0,0,0,.2);
   }
 }
 @media #{$small}{
@@ -60,6 +72,10 @@ $large:'(min-width:1200px)';
     opacity: 1;
     font-size: 2.6em;
 
+  }
+  .menuNetwork{
+    right: $surplus;
+    bottom: 20px;
   }
   #leftMenu{
     margin-left: 30px;
@@ -79,7 +95,12 @@ $large:'(min-width:1200px)';
      @include prefix('background-size','cover');
   }
   .fullMenuLinks{
-    width: 30%;
+    width: 70%;
+  }
+  .seccionLink{
+    margin-bottom: 30px;
+    font-size: 1.5em;
+
   }
 }
 @media #{$medium}{
@@ -91,6 +112,9 @@ $large:'(min-width:1200px)';
   #topMenu{
     margin-left:$surplus;
     opacity: 1;
+  }
+   .menuNetwork{
+    right: $surplus;
   }
   #leftMenu{
     margin-left: 20px;
@@ -121,6 +145,9 @@ $large:'(min-width:1200px)';
   #topMenu{
     margin-left:$surplus;
     opacity: 1;
+  }
+  .menuNetwork{
+    right: $surplus;
   }
   #leftMenu{
     margin-left: 20px;

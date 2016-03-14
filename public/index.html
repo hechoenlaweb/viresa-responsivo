@@ -4,16 +4,21 @@
     <title>Viresa</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="js/controller.min.js?cache=518"></script>
+    <script src="js/controller.min.js?cache=1239"></script>
     <script src="js/slider/js/swiper.js"></script>
-    <link rel="stylesheet" href="css/style.css?cache=518">
+    <link rel="stylesheet" href="css/style.css?cache=1239">
     <link href="https://fonts.googleapis.com/css?family=Vidaloka|Playfair+Display+SC:400,700|Comfortaa:400,300,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="js/slider/css/swiper.css">
   </head>
   <body>
+    <div class="indicador">
+      <svg id="indicador" height="150" width="150" class="disableHard">
+        <circle cx="70" cy="70" r="40" stroke="rgba(255,255,255,.7)" stroke-width="5" fill="transparent"></circle>
+      </svg>
+    </div>
     <div class="mensaje">Para seguir navegando, gira tu celular.</div>
     <main id="content" class="portrait">
       <div class="fullMenu">
@@ -66,6 +71,9 @@
           </div>
         </nav>
         <!--general content-->
+      </section>
+      <section>
+        <nav class="menuNetwork">OK</nav>
       </section>
     </main>
   </body>

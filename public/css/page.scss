@@ -11,7 +11,7 @@ $fuente1 : 'Vidaloka', serif;
 	outline: 1px solid $marker;
 }
 div,nav{
- @extend %show-element;
+ //@extend %show-element;
 }
 *{
 	font-size: 12px;
@@ -23,6 +23,9 @@ div,nav{
 	-o-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-ms-box-sizing: border-box;
+
+	 -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 *:before,
 *:after {
@@ -30,10 +33,12 @@ div,nav{
 	-moz-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	-ms-box-sizing: border-box;}
+	-ms-box-sizing: border-box;
+	}
 html,body{
   width: 100%;
   height: 100%;
+  overflow: hidden !important;
 }
 body{
   position: relative;
@@ -45,6 +50,25 @@ body{
 .disableHard{
  @include prefix('pointer-events',none);
  @include prefix('user-select',none);
+}
+#topMenu,.fa-circle{
+  cursor: pointer;
+}
+#indicador{
+  position: absolute;
+  z-index: 999999;
+  display: none;
+}
+.indicadorAnima{
+  @include prefix('animation','indicadorAnim 900ms forwards ease-in-out');
+}
+.menuNetwork{
+  position: absolute;
+  bottom: 10px;
+}
+.seccionLink:hover{
+  color:rgba(128,128,128,.4);
+  margin-left: 5px;
 }
 
 /*

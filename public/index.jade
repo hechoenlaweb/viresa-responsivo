@@ -3,6 +3,8 @@ html(lang='en')
   head
     include ./includes/header.jade
   body
+    .indicador
+      include ./includes/indicador.jade
     .mensaje Para seguir navegando, gira tu celular.
     main#content.portrait
       .fullMenu
@@ -19,3 +21,5 @@ html(lang='en')
         nav.menu
           include ./includes/menuLateral.jade
         //general content
+      section
+        nav.menuNetwork OK

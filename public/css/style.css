@@ -1,7 +1,3 @@
-div, nav {
-  outline: 1px solid #18ff00;
-}
-
 * {
   font-size: 12px;
   border: 0;
@@ -12,6 +8,8 @@ div, nav {
   -o-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 *:before,
@@ -26,6 +24,7 @@ div, nav {
 html, body {
   width: 100%;
   height: 100%;
+  overflow: hidden !important;
 }
 
 body {
@@ -50,6 +49,34 @@ body {
   user-select: none;
 }
 
+#topMenu, .fa-circle {
+  cursor: pointer;
+}
+
+#indicador {
+  position: absolute;
+  z-index: 999999;
+  display: none;
+}
+
+.indicadorAnima {
+  -webkit-animation: indicadorAnim 900ms forwards ease-in-out;
+  -moz-animation: indicadorAnim 900ms forwards ease-in-out;
+  -o-animation: indicadorAnim 900ms forwards ease-in-out;
+  -ms-animation: indicadorAnim 900ms forwards ease-in-out;
+  animation: indicadorAnim 900ms forwards ease-in-out;
+}
+
+.menuNetwork {
+  position: absolute;
+  bottom: 10px;
+}
+
+.seccionLink:hover {
+  color: rgba(128, 128, 128, 0.4);
+  margin-left: 5px;
+}
+
 /*
 @function strip-unit($value) {
 	@return $value / ($value * 0 + 1);
@@ -64,11 +91,9 @@ div{
 .menu {
   position: relative;
   z-index: 100;
-  cursor: pointer;
 }
 
 #home {
-  background-color: #cdcdcd;
   position: absolute;
   z-index: 99;
   -webkit-transition: all 300ms ease;
@@ -237,11 +262,6 @@ div{
   background-color: rgba(172, 44, 63, 0.9);
   position: absolute;
   z-index: 999979;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   display: none;
   opacity: 0;
 }
@@ -336,7 +356,8 @@ div{
 
   #topMenu {
     margin-left: 0;
-    opacity: 0;
+    color: white;
+    padding: 10px;
   }
 
   #leftMenu {
@@ -375,7 +396,7 @@ div{
   }
 
   .seccionLink {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 1.2em;
   }
 
@@ -384,10 +405,23 @@ div{
     height: 150px;
   }
 
+  .logoRojo img {
+    width: 70%;
+    height: 70%;
+  }
+
   .close {
     width: 60px;
     height: 60px;
     margin: 0px;
+  }
+
+  #leftMenu {
+    display: none;
+  }
+
+  nav:first-child {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -410,6 +444,11 @@ div{
     margin-left: 60px;
     opacity: 1;
     font-size: 2.6em;
+  }
+
+  .menuNetwork {
+    right: 60px;
+    bottom: 20px;
   }
 
   #leftMenu {
@@ -446,7 +485,12 @@ div{
   }
 
   .fullMenuLinks {
-    width: 30%;
+    width: 70%;
+  }
+
+  .seccionLink {
+    margin-bottom: 30px;
+    font-size: 1.5em;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -468,6 +512,10 @@ div{
   #topMenu {
     margin-left: 40px;
     opacity: 1;
+  }
+
+  .menuNetwork {
+    right: 40px;
   }
 
   #leftMenu {
@@ -525,6 +573,10 @@ div{
   #topMenu {
     margin-left: 40px;
     opacity: 1;
+  }
+
+  .menuNetwork {
+    right: 40px;
   }
 
   #leftMenu {
@@ -639,21 +691,19 @@ div{
   }
 }
 */
-.AexitMenu {
-  -webkit-animation: exitMenu 1s forwards ease;
-  -moz-animation: exitMenu 1s forwards ease;
-  -o-animation: exitMenu 1s forwards ease;
-  -ms-animation: exitMenu 1s forwards ease;
-  animation: exitMenu 1s forwards ease;
-}
-
-@keyframes exitMenu {
+@keyframes indicadorAnim {
   0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  60% {
     opacity: 1;
-    left: 0px;
   }
 
   100% {
-    left: -100%;
+    transform: scale(1);
+    opacity: 0;
+    display: none;
   }
 }

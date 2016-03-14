@@ -9,10 +9,9 @@ $transitionValue:all 300ms ease;
 .menu{
   position: relative;
   z-index: 100;
-  cursor: pointer;
 }
 #home{
-	background-color: rgba(205, 205, 205, 1);
+	//background-color: rgba(205, 205, 205, 1);
 	position: absolute;
 	z-index: 99;
 	@include prefix('transition',$transitionValue);
@@ -143,7 +142,6 @@ $transitionValue:all 300ms ease;
   background-color: $rojo2;
   position: absolute;
   z-index: 999979;
-  @include prefix('user-select',none);
    display: none;
    opacity: 0;
 
@@ -155,8 +153,6 @@ $transitionValue:all 300ms ease;
   position: absolute;
   @include prefix('transition',$transitionValue);
   left: 0px;
-
-
 }
 
 .seccionLink{
