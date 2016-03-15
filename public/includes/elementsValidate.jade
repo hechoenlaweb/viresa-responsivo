@@ -1,12 +1,29 @@
-.validateTitle CONSUMIR RESPONSABLEMENTE ES ACEPTAR TU EDAD.
-.validateText Antes de entrar a nuestra cava pon tu fecha de nacimiento.
-.validateDay
-.validateMonth 00
-  select
-    - var n = 1;
+.validateTitle
+  p
+    |CONSUMIR RESPONSABLEMENTE
+    br
+    |ES ACEPTAR TU EDAD.
+.validateText Antes de entrar a nuestra cava ingresa tu fecha de nacimiento.
+form.validateForm
+  .validateDay
+    select
+      option(value='0' selected) Día
+      - var n = 1
       while n < 32
-    option(value=n) n++
-.validateYear 99
+        option(value=n)= n++
+  .validateMonth
+    select
+      option(value='0' selected) Mes
+      - var n = 1
+      while n < 13
+        option(value=n)= n++
+  .validateYear
+    select
+      option(value='0' selected) Año
+      - var n = 1998
+      while n > 1920
+        option(value=n)= n--
+  .validateEnter ENTRAR
 .validateLogo
   img(src='img/vinicola-logo.png')
 .validatePrevents EVITA EL EXCESO.

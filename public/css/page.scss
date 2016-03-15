@@ -7,14 +7,24 @@ $blanco:rgba(255,255,255,1);
 $gris:rgb(178,178,178);
 $fuente2 : 'Comfortaa', serif;
 $fuente1 : 'Vidaloka', serif;
+$fuente3 : 'Times New Roman', serif;
 ///////////////////////////////
 
 ///////////////////////////////
 %show-element{
 	outline: 1px solid $marker;
 }
+////////////////////////
+
+%touchMobile{
+   -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  //@include prefix('transform',translateZ(0px));
+}
+
 div,nav{
  //@extend %show-element;
+ //@extend %touchMobile;
 }
 *{
 	font-size: 12px;
@@ -31,6 +41,8 @@ div,nav{
   -webkit-tap-highlight-color: transparent;
 
   text-decoration: none;
+  @extend %touchMobile;
+
 }
 *:before,
 *:after {
@@ -44,6 +56,10 @@ html,body{
   width: 100%;
   height: 100%;
   overflow: hidden !important;
+}
+html{
+  -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 body{
   position: relative;
@@ -65,16 +81,29 @@ body{
 //////////Indicador
 #indicador{
   position: absolute;
-  z-index: 999999;
+  z-index: 9999999;
   display: none;
 }
 .indicadorAnima{
-  @include prefix('animation','indicadorAnim 900ms forwards ease-in-out');
+  @include prefix('animation','indicadorAnim 300ms forwards ease-in');
 }
 .menuNetwork{
   position: absolute;
   bottom: 10px;
 }
+.swipeCustom{
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -100px;
+  display: inline-block;
+  width: 200px;
+
+}
+.swipeCustom span{
+  margin-right: 20px;
+}
+
 .seccionLink:hover{
   color:$gris;
   margin-left: 5px;
@@ -174,9 +203,9 @@ body{
   height: 100%;
   z-index: 999999999;
 }
-
-
-
+.clear{
+  clear: both !important;
+}
 
 
 

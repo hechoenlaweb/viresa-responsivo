@@ -1,0 +1,76 @@
+.backgroundAboutUs{
+  width: 100%;
+  height: 100%;
+  overflow-y:  auto !important;
+ // @extend %touchMobile;
+}
+.backgroundAboutUs{
+  text-align: center;
+}
+.aboutUs1{
+  position: relative;
+  width: 60%;
+  text-align: center;
+  height: auto;
+  z-index: 999993;
+  margin: 0 auto;
+  margin-top: 10%;
+  display: inline-block;
+  left: 0;
+  top: 0;
+}
+.aboutWellcome{
+  font-size: 3em;
+  font-family: $fuente3;
+  color: $blanco;
+}
+.aboutText{
+  font-size: 2em;
+  font-family:$fuente3;
+  color: $blanco;
+  font-weight: lighter !important;
+  font-style: italic;
+}
+///////////////////////
+.backgroundAboutUs2{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  @include prefix('transition',$transitionValue);
+}
+.textAboutUs2{
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: $rojo;
+  @include prefix('transition',$transitionValue);
+}
+.textAboutUs2Padding{
+  padding: 80px;
+  display: inline-block;
+}
+////////////////////////
+.bMargin30{
+  margin-bottom: 30px;
+}
+////////////
+.test1, .test2{
+  width: 100%;
+  height: 100%;
+}
+.test1{
+   background: url('../img/test1.jpg') no-repeat center center;
+  @include prefix('background-size','cover');
+}
+.test2{
+   background: url('../img/test2.jpg') no-repeat center center;
+  @include prefix('background-size','cover');
+}
+.test{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}

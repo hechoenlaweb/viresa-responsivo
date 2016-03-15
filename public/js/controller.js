@@ -1,5 +1,21 @@
 var swiper;
-//Configuration swipe
+///////////////////////
+var custom_event;
+function loadPage(){
+  custom_event = $.support.touch ? "tap" : "click";
+  openSection.openUrl('home');
+    orientarionChange();
+    windowResize();
+    closeMenu(false);
+    openMenu(false);
+    sectionsActivate();
+    scrollDetect();
+    indicador();
+    cerrarLoader();
+    activaClicks()
+};
+
+/////////////////////////
 function generateSlider(num){
   if(num==1){
     $('.swiper-button-next,.swiper-button-prev,.swiper-pagination').css('display','none');
@@ -9,7 +25,7 @@ function generateSlider(num){
        swiper = new Swiper('.swiper-container', {
             spaceBetween: 0,
             slidesPerView: 1,
-            effect:'coverflow',
+            effect:'slide',
             centeredSlides: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
@@ -28,7 +44,7 @@ function generateSlider(num){
             },
             breakpoints: {
                  700: {
-                     effect: 'fade',
+                     effect: 'slide',
                      speed: 600
                   }
               }
@@ -37,9 +53,12 @@ function generateSlider(num){
         // Init Swiper
 }
 
+
 var sections = {
   home:['homeSection.html'],
-  aboutUs:['aboutUsSection.html','aboutUsSection2.html']
+  aboutUs:['aboutUsSection.html','aboutUsSection2.html'],
+  ourFields:['test1.html'],
+  ourGrapes:['test2.html']
 }
 
 function intentOpen(sec){
@@ -47,8 +66,10 @@ function intentOpen(sec){
   TweenMax.fromTo($(".preloadContentSection"),.5,{opacity:0,overwrite:1}, {opacity:1 ,overwrite:1, ease: Power4.easeIn, onComplete:exeOpen, onCompleteParams:[sec]});
 }
 function exeOpen(sec){
-  openSection.openUrl(sec);
-}
+  setTimeout(function(){
+        openSection.openUrl(sec);
+    }, 1000);
+};
 
 var openSection = {
   timer: function(){
@@ -57,7 +78,6 @@ var openSection = {
   },
   openUrl: function(getSection){
   $(".preloadContentSection").show();
-
 
 
    var selectSection = sections[getSection];
@@ -102,31 +122,27 @@ $(function(){
   });
 });
 
-function loadPage(){
-  openSection.openUrl('home');
-    orientarionChange();
-    windowResize();
-    closeMenu(false);
-    openMenu(false);
-    sectionsActivate();
-    scrollDetect();
-    indicador();
-    cerrarLoader();
-
-};
+function activaClicks(){
+  $('.validateEnter').click(function(){
+    enterSite();
+  });
+}
+function enterSite(){
+  TweenMax.to($(".confirmEnter"), .6, {opacity:0,autoAlpha:0, ease: Power4.easeIn});
+}
 function cerrarLoader(){
   TweenMax.to($(".preloadContent"), 2.5, {height:0,autoAlpha:1, ease: Power4.easeIn});
 }
 function indicador(){
-  $(document).on('click tap',function(e){
-    $('#indicador').css('left',e.pageX-($('#indicador').width()/2));
-    $('#indicador').css('top',e.pageY-($('#indicador').height()/2));
+  $('body').on(custom_event,function(event){
+    $('#indicador').css('left',event.pageX-($('#indicador').width()/2));
+    $('#indicador').css('top',event.pageY-($('#indicador').height()/2));
     $('#indicador').css({'opacity':'0','display':'block'});
     $('#indicador').removeClass('indicadorAnima');
     setTimeout(function(){
         	$('#indicador').addClass('indicadorAnima');
 
-    }, 200);
+    }, 50);
 
    // $('#indicador').top($(window).offset().top);
   })
@@ -147,17 +163,31 @@ function scrollDetect(){
 
 function sectionsActivate(){
 
-  $('.homeClass').on('click tap',function(){
+  $('.homeClass').on(custom_event,function(){
     intentOpen('home');
      //openSection.openUrl('home');
      closeMenu(true);
 
   });
-  $('.aboutUsClass').on('click tap',function(){
+  $('.aboutUsClass').on(custom_event,function(){
      intentOpen('aboutUs');
     // openSection.openUrl('aboutUs');
       closeMenu(true);
   });
+  $('.ourFieldsClass').on(custom_event,function(){
+     intentOpen('ourFields');
+    // openSection.openUrl('aboutUs');
+      closeMenu(true);
+  });
+  $('.ourGrapesClass').on(custom_event,function(){
+     intentOpen('ourGrapes');
+    // openSection.openUrl('aboutUs');
+      closeMenu(true);
+  });
+  $('.noAvailable').on(custom_event,function(){
+    alert('Sección no disponible.');
+  });
+
 }
 
 /////////////////////MENU
@@ -176,7 +206,7 @@ function closeMenu(mode){
   if(mode){
       closeMenuAnim();
   }else{
-    $(".close").on('click tap',function(){
+    $(".close").on(custom_event,function(){
       closeMenuAnim();
     });
   }
@@ -186,7 +216,7 @@ function openMenu(mode){
       openMenuAnim();
      // $(".seccionLink").addClass('AexitMenu2');
   }else{
-    $("#topMenu").on('click tap',function(){
+    $("#topMenu").on(custom_event,function(){
       openMenuAnim();
 
 

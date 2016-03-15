@@ -5,9 +5,9 @@ doctype html
 html(lang='en')
   head: include ./includes/header.jade
   body
-    .preloadGeneral: include ./includes/preloadGeneral.jade
     .indicador: include ./includes/indicador.jade
     .mensaje Para seguir navegando, gira tu celular.
+    .preloadGeneral: include ./includes/preloadGeneral.jade
     main#content.portrait
       .fullMenu
         .fullMenuLinks: include ./includes/menuLinks.jade
@@ -20,6 +20,8 @@ html(lang='en')
         nav.menu: include ./includes/menuLateral.jade
         //general content
       section
+        .swipeCustom
+          .swiper-pagination
         nav.menuNetwork
           a(href='http://facebook.com' target='_blank'):.fa.fa-facebook-official.icon.iconNetwork
           a(href='http://twitter.com' target='_blank'):.fa.fa-twitter-square.icon.iconNetwork

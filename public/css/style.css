@@ -1,4 +1,9 @@
 * {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+* {
   font-size: 12px;
   border: 0;
   padding: 0;
@@ -26,6 +31,11 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden !important;
+}
+
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 body {
@@ -60,19 +70,32 @@ body {
 
 #indicador {
   position: absolute;
-  z-index: 999999;
+  z-index: 9999999;
   display: none;
 }
 
 .indicadorAnima {
-  -webkit-animation: indicadorAnim 900ms forwards ease-in-out;
-  -ms-animation: indicadorAnim 900ms forwards ease-in-out;
-  animation: indicadorAnim 900ms forwards ease-in-out;
+  -webkit-animation: indicadorAnim 300ms forwards ease-in;
+  -ms-animation: indicadorAnim 300ms forwards ease-in;
+  animation: indicadorAnim 300ms forwards ease-in;
 }
 
 .menuNetwork {
   position: absolute;
   bottom: 10px;
+}
+
+.swipeCustom {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -100px;
+  display: inline-block;
+  width: 200px;
+}
+
+.swipeCustom span {
+  margin-right: 20px;
 }
 
 .seccionLink:hover {
@@ -202,6 +225,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: 999999999;
+}
+
+.clear {
+  clear: both !important;
 }
 
 /*
@@ -439,19 +466,13 @@ div{
   margin-top: 30px;
 }
 
-.backgroundAboutUs {
-  width: 100%;
-  height: 100%;
-}
-
-.backgroundAboutUs2 {
-  width: 50%;
-  height: 100%;
-  left: 0;
-}
-
 .homeClass {
   cursor: pointer;
+}
+
+.swipe-custom {
+  position: relative;
+  left: 30%;
 }
 
 .confirmEnter {
@@ -462,18 +483,172 @@ div{
   background-color: white;
   width: 100%;
   height: 100%;
+  text-align: center;
+  overflow-y: auto !important;
+}
+
+.confirmEnter * {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .confirmEnterIn {
   position: absolute;
+  background-color: black;
 }
 
 .elementsValidate {
-  position: relative;
-  width: 80%;
-  height: auto;
-  background-color: black;
+  text-align: center;
   color: white;
+  display: inline-block;
+  margin: 0 auto;
+  margin: 20px;
+}
+
+.validateTitle p {
+  font-size: 3em;
+  font-family: "Comfortaa", serif;
+  margin-top: 30px;
+}
+
+.validateText {
+  font-size: 1.5em;
+  font-family: "Comfortaa", serif;
+}
+
+.validatePrevents {
+  font-size: 1em;
+  font-family: "Comfortaa", serif;
+}
+
+.validateText, .validateForm, .validateLogo {
+  margin-bottom: 30px;
+}
+
+.validateForm select {
+  width: 70px;
+  height: 70px;
+  font-size: 1.5em;
+  font-family: "Comfortaa", serif;
+  text-align: center;
+  color: #ac2c3f;
+  margin-right: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.validateForm div {
+  display: inline-block;
+}
+
+.validateLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.validateLogo {
+  background-color: #ac2c3f;
+  display: inline-block;
+  padding: 30px;
+}
+
+.validateEnter {
+  font-family: "Comfortaa", serif;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.validateEnter:hover {
+  color: #ac2c3f !important;
+}
+
+.backgroundAboutUs {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto !important;
+}
+
+.backgroundAboutUs {
+  text-align: center;
+}
+
+.aboutUs1 {
+  position: relative;
+  width: 60%;
+  text-align: center;
+  height: auto;
+  z-index: 999993;
+  margin: 0 auto;
+  margin-top: 10%;
+  display: inline-block;
+  left: 0;
+  top: 0;
+}
+
+.aboutWellcome {
+  font-size: 3em;
+  font-family: "Times New Roman", serif;
+  color: white;
+}
+
+.aboutText {
+  font-size: 2em;
+  font-family: "Times New Roman", serif;
+  color: white;
+  font-weight: lighter !important;
+  font-style: italic;
+}
+
+.backgroundAboutUs2 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.textAboutUs2 {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: #ac2c3f;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.textAboutUs2Padding {
+  padding: 80px;
+  display: inline-block;
+}
+
+.bMargin30 {
+  margin-bottom: 30px;
+}
+
+.test1, .test2 {
+  width: 100%;
+  height: 100%;
+}
+
+.test1 {
+  background: url("../img/test1.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+.test2 {
+  background: url("../img/test1.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+
+.test {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -579,6 +754,77 @@ div{
     font-size: 2.5em;
     margin-left: 4%;
   }
+
+  .validateTitle p {
+    font-size: 1.5em;
+    font-family: "Comfortaa", serif;
+    margin-top: 20px;
+  }
+
+  .validateText {
+    font-size: 1.2em;
+  }
+
+  .validatePrevents {
+    font-size: .8em;
+  }
+
+  .validateText, .validateForm, .validateLogo {
+    margin-bottom: 20px;
+  }
+
+  .validateForm select {
+    margin-right: 10px;
+  }
+
+  .validateEnter {
+    font-family: "Comfortaa", serif;
+    font-size: 1.5em;
+    display: block !important;
+    margin-top: 30px;
+  }
+
+  .validateLogo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .validateForm select {
+    width: 85px;
+    height: 85px;
+  }
+
+  .aboutUs1 {
+    margin-top: 20%;
+  }
+
+  .aboutUs1 {
+    width: 80%;
+  }
+
+  .backgroundAboutUs2 {
+    position: static;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    top: 0;
+    clear: both;
+  }
+
+  .textAboutUs2 {
+    position: static;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #ac2c3f;
+    clear: both;
+  }
+
+  .textAboutUs2Padding {
+    padding: 60px;
+    margin-top: 0px;
+    display: inline-block;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #home {
@@ -674,6 +920,70 @@ div{
 
   .seccionLinkNetwork {
     display: none;
+  }
+
+  .validateTitle p {
+    font-size: 1.5em;
+    font-family: "Comfortaa", serif;
+    margin-top: 20px;
+  }
+
+  .validateText {
+    font-size: 1.2em;
+  }
+
+  .validatePrevents {
+    font-size: .8em;
+  }
+
+  .validateText, .validateForm, .validateLogo {
+    margin-bottom: 20px;
+  }
+
+  .validateForm select {
+    margin-right: 10px;
+  }
+
+  .validateEnter {
+    font-family: "Comfortaa", serif;
+    font-size: 1.5em;
+    display: block !important;
+    margin-top: 30px;
+  }
+
+  .validateLogo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .validateForm select {
+    width: 85px;
+    height: 85px;
+  }
+
+  .aboutUs1 {
+    margin-top: 20%;
+  }
+
+  .aboutUs1 {
+    width: 80%;
+  }
+
+  .backgroundAboutUs2 {
+    position: static;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    top: 0;
+    clear: both;
+  }
+
+  .textAboutUs2 {
+    position: static;
+    left: 0;
+    width: 100%;
+    background-color: #ac2c3f;
+    clear: both;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -815,9 +1125,9 @@ div{
 
   .backgroundAboutUs2 {
     background: url("../img/about-us-2.jpg") no-repeat center center;
-    -webkit-background-size: 100%;
-    -ms-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
   }
 
   .fullMenuLinks {
@@ -847,20 +1157,27 @@ div{
   }
 
   .confirmEnterIn {
+    background: none;
+    -webkit-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: -webkit-calc(100% - 0);
+    width: -o-calc(100% - 0);
+    width: -ms-calc(100% - 0);
+    width: calc(100% - 0);
+    height: -webkit-calc(100% - 0);
+    height: -o-calc(100% - 0);
+    height: -ms-calc(100% - 0);
+    height: calc(100% - 0);
+  }
+
+  .confirmEnter {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
-    left: 0px;
-    top: 0px;
-    width: -webkit-calc(100% - 0px);
-    width: -o-calc(100% - 0px);
-    width: -ms-calc(100% - 0px);
-    width: calc(100% - 0px);
-    height: -webkit-calc(100% - 0px);
-    height: -o-calc(100% - 0px);
-    height: -ms-calc(100% - 0px);
-    height: calc(100% - 0px);
   }
 
   .menu {
@@ -928,7 +1245,7 @@ div{
     opacity: 0;
   }
 
-  60% {
+  40% {
     opacity: 1;
   }
 
@@ -946,7 +1263,7 @@ div{
     opacity: 0;
   }
 
-  60% {
+  40% {
     opacity: 1;
   }
 

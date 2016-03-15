@@ -188,18 +188,14 @@ $transitionValue:all 300ms ease;
   margin-top: 30px;
 }
 ////////////About us
-.backgroundAboutUs{
-  width: 100%;
-  height: 100%;
-}
-.backgroundAboutUs2{
-  width: 50%;
-  height: 100%;
-  left: 0;
-}
 .homeClass{
   cursor: pointer;
 }
+.swipe-custom{
+  position: relative;
+  left: 30%;
+}
 @import 'enter.scss';
+@import 'sections.scss';
 @import 'mediaqueries.scss';
 @import 'animations.scss';
