@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+<!--/////////////////-->
+<!--////////////--><!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Viresa</title>
@@ -6,14 +8,45 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="js/controller.min.js?cache=1239"></script>
+    <script src="js/controller.min.js?cache=22"></script>
     <script src="js/slider/js/swiper.js"></script>
-    <link rel="stylesheet" href="css/style.css?cache=1239">
+    <link rel="stylesheet" href="css/style.css?cache=22">
     <link href="https://fonts.googleapis.com/css?family=Vidaloka|Playfair+Display+SC:400,700|Comfortaa:400,300,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="js/slider/css/swiper.css">
   </head>
   <body>
+    <div class="preloadGeneral">
+      <div class="preloadContent">
+        <div class="logoPreload showInLogoPreload"><img src="img/vinicola-logo-rojo.png" width="100%"></div>
+        <div class="load-bar">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="confirmEnter">
+        <div class="confirmEnterIn">
+          <div class="elementsValidate">
+            <div class="validateTitle">CONSUMIR RESPONSABLEMENTE ES ACEPTAR TU EDAD.</div>
+            <div class="validateText">Antes de entrar a nuestra cava pon tu fecha de nacimiento.</div>
+            <div class="validateDay">
+              <select>
+                <option value="0">0</option>
+              </select>
+            </div>
+            <div class="validateMonth">09
+              <select>
+                <option value="0">0</option>
+              </select>
+            </div>
+            <div class="validateYear">0099</div>
+            <div class="validateLogo"><img src="img/vinicola-logo.png"></div>
+            <div class="validatePrevents">EVITA EL EXCESO.</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="indicador">
       <svg id="indicador" height="150" width="150" class="disableHard">
         <circle cx="70" cy="70" r="40" stroke="rgba(255,255,255,.7)" stroke-width="5" fill="transparent"></circle>
@@ -26,12 +59,17 @@
           <div class="close"><img src="img/close.svg"></div>
           <div class="logoRojo"><img src="img/vinicola-logo-rojo.png" class="homeClass">
             <div class="contenedorLinks">
+              <div class="seccionLink homeClass">HOME</div><br>
               <div class="seccionLink aboutUsClass">QUÍENES SOMOS</div><br>
               <div class="seccionLink">NUESTROS CAMPOS</div><br>
               <div class="seccionLink">NUESTRAS UVAS</div><br>
               <div class="seccionLink">VINOS LLANO COLORADO</div><br>
               <div class="seccionLink">PREMIOS</div><br>
-              <div class="seccionLink">CONTACTO</div>
+              <div class="seccionLink">CONTACTO</div><br><br>
+              <div class="seccionLinkNetwork"><a href="http://facebook.com" target="_blank">
+                  <div class="fa fa-facebook-official icon iconNetwork"></div></a><a href="http://twitter.com" target="_blank">
+                  <div class="fa fa-twitter-square icon iconNetwork"></div></a><a href="http://instagram.com" target="_blank">
+                  <div class="fa fa-instagram icon iconNetwork"></div></a></div>
             </div>
           </div>
         </div>
@@ -39,6 +77,14 @@
       <section id="contentSection">
         <!-- .grid__col.grid__col--3-of-12-->
         <article id="home">
+          <div class="preloadContentSection">
+            <div class="logoPreload showInLogoPreload"><img src="img/vinicola-logo.png" width="100%"></div>
+            <div class="load-bar">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
           <div class="swiper-container">
             <div class="swiper-scrollbar"></div>
             <div class="swiper-button-prev"></div>
@@ -68,12 +114,17 @@
             <div class="fa fa-circle"></div>
             <div class="fa fa-circle"></div>
             <div class="fa fa-circle"></div>
+            <div class="fa fa-circle"></div>
+            <div class="fa fa-circle"></div>
           </div>
         </nav>
         <!--general content-->
       </section>
       <section>
-        <nav class="menuNetwork">OK</nav>
+        <nav class="menuNetwork"><a href="http://facebook.com" target="_blank">
+            <div class="fa fa-facebook-official icon iconNetwork"></div></a><a href="http://twitter.com" target="_blank">
+            <div class="fa fa-twitter-square icon iconNetwork"></div></a><a href="http://instagram.com" target="_blank">
+            <div class="fa fa-instagram icon iconNetwork"></div></a></nav>
       </section>
     </main>
   </body>

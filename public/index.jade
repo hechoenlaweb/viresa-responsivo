@@ -1,25 +1,26 @@
+///////////////////
+
+//////////////
 doctype html
 html(lang='en')
-  head
-    include ./includes/header.jade
+  head: include ./includes/header.jade
   body
-    .indicador
-      include ./includes/indicador.jade
+    .preloadGeneral: include ./includes/preloadGeneral.jade
+    .indicador: include ./includes/indicador.jade
     .mensaje Para seguir navegando, gira tu celular.
     main#content.portrait
       .fullMenu
-        .fullMenuLinks
-          include ./includes/menuLinks.jade
-      section#contentSection
-        include ./includes/home.jade
+        .fullMenuLinks: include ./includes/menuLinks.jade
+      section#contentSection: include ./includes/home.jade
       //top menu
       section
-        nav.menu
-          include ./includes/menu.jade
+        nav.menu: include ./includes/menu.jade
         //left menu
       section
-        nav.menu
-          include ./includes/menuLateral.jade
+        nav.menu: include ./includes/menuLateral.jade
         //general content
       section
-        nav.menuNetwork OK
+        nav.menuNetwork
+          a(href='http://facebook.com' target='_blank'):.fa.fa-facebook-official.icon.iconNetwork
+          a(href='http://twitter.com' target='_blank'):.fa.fa-twitter-square.icon.iconNetwork
+          a(href='http://instagram.com' target='_blank'):.fa.fa-instagram.icon.iconNetwork

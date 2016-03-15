@@ -1,3 +1,5 @@
+$transitionValue:all 300ms ease;
+
 //@import "bootstrap.scss";
 @import 'mixings.scss';
 @import 'page.scss';
@@ -5,7 +7,7 @@
 //@import 'https://fonts.googleapis.com/css?family=Vidaloka|Playfair+Display+SC:400,700';
 //@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css';
 //@import 'js/slider/css/swiper.css';
-$transitionValue:all 300ms ease;
+
 .menu{
   position: relative;
   z-index: 100;
@@ -17,6 +19,7 @@ $transitionValue:all 300ms ease;
 	@include prefix('transition',$transitionValue);
 	top: 0;
 	left: 0;
+	overflow: hidden;
 }
 #topMenu{
   @include prefix('transition',$transitionValue);
@@ -31,23 +34,8 @@ $transitionValue:all 300ms ease;
 	 margin-left: 20;
 	 margin-top: 10px;
 }
-#leftMenu{
-  @include prefix('transform','rotate(90deg)');
-  @include prefix('transform-origin','left');
-  @include prefix('transition',$transitionValue);
-  margin-left: 10px;
-  display: inline-block;
-  opacity: 0;
-  color:$rojo;
-}
-//Menu points
-.fa-ellipsis-v{
-  font-size: .8em;
-}
-//Menu bullets
-#leftMenu .fa-circle{
-  margin-right: 30px;
-}
+
+
 ///////////Slider
 .swiper-container {
         width: 100%;
@@ -66,6 +54,7 @@ $transitionValue:all 300ms ease;
   width: 100%;
   height: 100%;
 }
+/*
 .logo{
   position: relative;
   display: inline-block;
@@ -73,8 +62,10 @@ $transitionValue:all 300ms ease;
   background-color: $rojo;
   z-index: 999;
 }
+*/
 .logo{
   position: relative;
+  padding: 20px;
   display: inline-block;
   width: 150px;
   height: 150px;
@@ -131,7 +122,7 @@ $transitionValue:all 300ms ease;
   font-size: 1.5em;
   color: rgba(255,255,255,1);
   position: absolute;
-  z-index: 999980;
+  z-index: 99980;
   font-family: $fuente1;
   @include prefix('text-shadow','2px 2px 4px rgba(0,0,0,0.70)');
 }
@@ -141,7 +132,7 @@ $transitionValue:all 300ms ease;
   height: 100%;
   background-color: $rojo2;
   position: absolute;
-  z-index: 999979;
+  z-index: 99979;
    display: none;
    opacity: 0;
 
@@ -173,7 +164,7 @@ $transitionValue:all 300ms ease;
   position: absolute;
   right: 0px;
   padding: 15px;
-  z-index: 999981;
+  z-index: 99981;
   cursor: pointer;
 
   //float: right;
@@ -209,5 +200,6 @@ $transitionValue:all 300ms ease;
 .homeClass{
   cursor: pointer;
 }
+@import 'enter.scss';
 @import 'mediaqueries.scss';
 @import 'animations.scss';

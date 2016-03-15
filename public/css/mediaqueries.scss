@@ -5,11 +5,18 @@ $extraSmall:'(max-width:767px)';
 $small:'(min-width:768px) and (max-width:991px)';
 $medium:'(min-width:992px) and (max-width:1199px)';
 $large:'(min-width:1200px)';
+// !extraSmall
 @media #{$extraSmall}{
   $surplus:0px;
    #home{
   	$properties: ('mobile':true);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  .confirmEnterIn{
+    background: url('../img/enter.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+    $properties: ('mobile':false);
+    @include percents(100%,100%,$surplus,$surplus,$properties);
   }
    #topMenu{
     margin-left:0;
@@ -37,41 +44,60 @@ $large:'(min-width:1200px)';
   .seccionLink{
     margin-bottom: 25px;
     font-size: 1.2em;
-
-
   }
   .logoRojo{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .logoRojo img{
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
   }
   .close{
    width: 60px;
    height: 60px;
    margin: 0px;
-
   }
-#leftMenu{
-    display: none;
+  #leftMenu{
+      display: none;
   }
   nav:first-child{
-    background-color: rgba(0,0,0,.2);
+      background-color: rgba(0,0,0,.2);
+  }
+  .menuNetwork{
+    display: none;
+  }
+  .seccionLinkNetwork div{
+    font-size: 2.5em;
+    margin-left: 4%;
   }
 }
+// !Small
 @media #{$small}{
   $surplus:60px;
    #home{
    $properties: ('mobile':false);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
   }
+  .confirmEnterIn{
+    background: url('../img/enter.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+    $properties: ('mobile':false);
+    @include percents(100%,100%,$surplus,$surplus,$properties);
+  }
    #topMenu{
     margin-left:$surplus;
     opacity: 1;
     font-size: 2.6em;
 
+  }
+  .logoRojo{
+    width: 200px;
+    height: 200px;
+  }
+  .logoRojo img{
+    width: 60%;
+    height: 60%;
   }
   .menuNetwork{
     right: $surplus;
@@ -102,12 +128,24 @@ $large:'(min-width:1200px)';
     font-size: 1.5em;
 
   }
+   .iconNetwork{
+    font-size: 2em !important;
+  }
+  .seccionLinkNetwork{
+    display: none;
+  }
 }
 @media #{$medium}{
   $surplus:40px;
    #home{
     $properties: ('mobile':false);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  .confirmEnterIn{
+    background: url('../img/enter.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+    $properties: ('mobile':false);
+    @include percents(100%,100%,$surplus,$surplus,$properties);
   }
   #topMenu{
     margin-left:$surplus;
@@ -135,12 +173,24 @@ $large:'(min-width:1200px)';
   .fullMenuLinks{
     width: 28%;
   }
+  .iconNetwork{
+    font-size: 1.5em !important;
+  }
+  .seccionLinkNetwork{
+    display: none;
+  }
 }
 @media #{$large}{
   $surplus:40px;
   #home{
   	$properties: ('mobile':false);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  .confirmEnterIn{
+    background: url('../img/enter.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+    $properties: ('mobile':false);
+    @include percents(100%,100%,$surplus,$surplus,$properties);
   }
   #topMenu{
     margin-left:$surplus;
@@ -169,6 +219,12 @@ $large:'(min-width:1200px)';
   .fullMenuLinks{
     width: 28%;
   }
+  .iconNetwork{
+    font-size: 1.5em !important;
+  }
+  .seccionLinkNetwork{
+    display: none;
+  }
 }
 @media #{$landscapeiPhone} {
   //Landscape 667/375 - Portrait 375/559
@@ -176,6 +232,12 @@ $large:'(min-width:1200px)';
   #home{
   	$properties: ('mobile':false);
   	@include percents(100%,100%,$surplus,$surplus,$properties);
+  }
+  .confirmEnterIn{
+    background: url('../img/enter.jpg') no-repeat center center fixed;
+    @include prefix('background-size','cover');
+    $properties: ('mobile':false);
+    @include percents(100%,100%,$surplus,$surplus,$properties);
   }
 	.menu{
   	display: none;
@@ -185,7 +247,7 @@ $large:'(min-width:1200px)';
     @include prefix('background-size','cover');
    }
   .portrait{
-     @include prefix('filter','blur(4px) invert(0.4)');
+     @include prefix('filter','blur(5px) invert(0.2)');
    }
   .mensaje{
      @include prefix('animation','textoAnim 600ms forwards ease-in-out');
@@ -198,17 +260,16 @@ $large:'(min-width:1200px)';
   .fullMenuLinks{
     width: 28%;
   }
-}
-@keyframes textoAnim{
-  //from to
-  0%{
-    transform: scale(.9);
-    opacity: 0;
+  .logoPreload{
+    bottom:25%;
   }
-  100%{
-    transform: scale(1);
-    //@include corner(0px);
+  .load-bar {
+    top: 85%;
   }
+  .seccionLinkNetwork{
+    display: none;
+  }
+
 }
 
 /*
