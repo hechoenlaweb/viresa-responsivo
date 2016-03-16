@@ -67,8 +67,8 @@ function generateSlider(num){
 var sections = {
   home:[['INICIO','homeSection.html']],
   aboutUs:[['QUIENES SOMOS','aboutUsSection.html'],['NUESTRA HISTORIA','aboutUsSection2.html'],['CALIDAD','aboutUsSection3.html']],
-  ourFields:['test1.html'],
-  ourGrapes:['test2.html']
+  ourFields:[['TEST1','test1.html']],
+  ourGrapes:[['TEST2','test2.html']]
 }
 
 function intentOpen(sec){

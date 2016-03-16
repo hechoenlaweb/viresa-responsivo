@@ -1251,6 +1251,17 @@ div{
   .swipeCustom {
     left: 40px;
   }
+
+  .textAboutUs2 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    background-color: #ac2c3f;
+    clear: both;
+    height: auto;
+    min-height: 100% !important;
+  }
 }
 @media (min-width: 1200px) {
   .textAboutUs2 {

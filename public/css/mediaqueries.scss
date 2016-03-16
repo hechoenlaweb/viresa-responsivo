@@ -328,6 +328,16 @@ $heightMin:'(max-height:800px)';
   .swipeCustom{
     left: $surplus;
   }
+  .textAboutUs2{
+    position: absolute;
+    left:50%;
+    top:0;
+    width: 50%;
+    background-color: $rojo;
+    clear: both;
+    height: auto;
+      min-height: 100% !important;
+  }
 }
 @media #{$large}{
   .textAboutUs2{
