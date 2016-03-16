@@ -509,6 +509,7 @@
             var image;
             function onReady () {
                 if (callback) callback();
+
             }
             if (!imgElement.complete || !checkForComplete) {
                 if (src) {
@@ -1037,7 +1038,7 @@
                             paginationHTML += s.params.paginationBulletRender(i, s.params.bulletClass);
                         }
                         else {
-                            paginationHTML += '<div class="contBullet"><' + s.params.paginationElement+' class="' + s.params.bulletClass + '"></' + s.params.paginationElement + '><div class="nameBullet">nombre</div></div>';
+                            paginationHTML += '<div class="contBullet"><' + s.params.paginationElement+' class="' + s.params.bulletClass + '"></' + s.params.paginationElement + '><div class="nameBullet"></div></div>';
                         }
                     }
                     s.paginationContainer.html(paginationHTML);

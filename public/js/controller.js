@@ -25,7 +25,8 @@ function loadPage(){
 /////////////////////////
 var elementsInteractive  = '.swiper-button-next,.swiper-button-prev,.swiper-pagination,.swipeCustom';
 ////////////////////////
-function generateSlider(num, arrayOpen){
+var arrayOpen;
+function generateSlider(num){
     if(num==1){
     $(elementsInteractive).css('display','none');
   }else{
@@ -42,7 +43,7 @@ function generateSlider(num, arrayOpen){
             pagination: '.swiper-pagination',
             roundLengths:true,
             nested:true,
-            speed: 1200,
+            speed: 800,
             freeModeSticky:true,
             coverflow: {
               rotate: 20,
@@ -60,14 +61,6 @@ function generateSlider(num, arrayOpen){
             //paginationType: 'progress'
         });
 
-         for(var value in arrayOpen){
-          var nameFile = arrayOpen[value][0];
-          //alert($('.nameBullet').length);
-          $('.nameBullet').eq(value).html(nameFile);
-           console.log(value);
-       //alert(nameFile);
-
-        }
         // Init Swiper
 }
 
@@ -123,6 +116,8 @@ var openSection = {
          waiting.splice(0, 1);
          if(waiting.length==0){
            hidePreloadSection();
+           nameSubs();
+
           };
          //alert(1);
        });
@@ -132,10 +127,21 @@ var openSection = {
      if(swiper){
        swiper.destroy(true, true);
      };
-     generateSlider($(".swiper-slide").length,selectSection);
+     arrayOpen = selectSection;
+     generateSlider($(".swiper-slide").length);
      //$(".preloadContentSection").hide();
   }
 };
+
+function nameSubs(){
+  //alert(1);
+   for(var value in arrayOpen){
+      var nameFile = arrayOpen[value][0];
+      $('.nameBullet').eq(value).html(nameFile);
+       console.log(value);
+    }
+
+}
 
 function hidePreloadSection(){
   TweenMax.to($(".preloadContentSection"),.5, {opacity:0,autoAlpha:0 ,overwrite:1, ease: Power4.easeIn});
@@ -289,6 +295,9 @@ var monitorElements = ['backgroundHome'];
 function windowResize(){
   $(window).resize(function(){
     reloadCSSElements();
+     setTimeout(function(){
+       nameSubs();
+    }, 200);
   })
 }
 function orientarionChange(){

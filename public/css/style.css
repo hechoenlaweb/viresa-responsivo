@@ -101,6 +101,7 @@ body {
   bottom: 25px;
   display: none;
   z-index: 992;
+  width: 70%;
 }
 
 .swipeCustom span {
@@ -1252,6 +1253,17 @@ div{
   }
 }
 @media (min-width: 1200px) {
+  .textAboutUs2 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    background-color: #ac2c3f;
+    clear: both;
+    height: auto;
+    min-height: 100% !important;
+  }
+
   #home {
     left: 40px;
     top: 40px;
