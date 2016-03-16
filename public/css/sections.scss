@@ -37,13 +37,7 @@
   left: 0;
   @include prefix('transition',$transitionValue);
 }
-.backgroundAboutUs3{
-  position:relative;
-  width: 50%;
-  height: 100%;
-  left: 0;
-  @include prefix('transition',$transitionValue);
-}
+
 .textAboutUs2{
   position: absolute;
   left: 0%;
