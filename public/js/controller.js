@@ -23,9 +23,10 @@ function loadPage(){
 };
 
 /////////////////////////
-function generateSlider(num){
-  var elementsInteractive  = '.swiper-button-next,.swiper-button-prev,.swiper-pagination,.swipeCustom';
-  if(num==1){
+var elementsInteractive  = '.swiper-button-next,.swiper-button-prev,.swiper-pagination,.swipeCustom';
+////////////////////////
+function generateSlider(num, arrayOpen){
+    if(num==1){
     $(elementsInteractive).css('display','none');
   }else{
     $(elementsInteractive).show();
@@ -58,25 +59,31 @@ function generateSlider(num){
               }
             //paginationType: 'progress'
         });
+
+         for(var value in arrayOpen){
+          var nameFile = arrayOpen[value][0];
+          //alert($('.nameBullet').length);
+          $('.nameBullet').eq(value).html(nameFile);
+           console.log(value);
+       //alert(nameFile);
+
+        }
         // Init Swiper
 }
 
-
 var sections = {
-  home:['homeSection.html'],
-  homeBullets:['Inicio'],
-  aboutUs:['aboutUsSection.html','aboutUsSection2.html'],
-  aboutUsBullets:['Quienes somos','Nuestras uvas'],
+  home:[['INICIO','homeSection.html']],
+  aboutUs:[['QUIENES SOMOS','aboutUsSection.html'],['NUESTRA HISTORIA','aboutUsSection2.html'],['CALIDAD','aboutUsSection3.html']],
   ourFields:['test1.html'],
   ourGrapes:['test2.html']
 }
 
-
-
 function intentOpen(sec){
+  $(elementsInteractive).css('display','none');
   TweenMax.set($(".preloadContentSection"),{autoAlpha:1});
   TweenMax.fromTo($(".preloadContentSection"),.5,{opacity:0,overwrite:1}, {opacity:1 ,overwrite:1, ease: Power4.easeIn, onComplete:exeOpen, onCompleteParams:[sec]});
 }
+
 function exeOpen(sec){
   setTimeout(function(){
         openSection.openUrl(sec);
@@ -91,7 +98,6 @@ var openSection = {
   openUrl: function(getSection){
   $(".preloadContentSection").show();
 
-
    var selectSection = sections[getSection];
 //   var selectSectionBullets = sections[getSection];
 
@@ -101,7 +107,11 @@ var openSection = {
    var waiting = [];
      for(var value in selectSection){
       // console.log(selectSection[value]);
-       var file = selectSection[value];
+       var file = selectSection[value][1];
+       var nameFile = selectSection[value][0];
+      // $('.nameBullet').eq(value).html('ok'nameFile);
+    //   console.log(value);
+       //alert(nameFile);
        var hash = this.timer()+value;
        console.log(hash+'/'+file);
        $('.swiper-wrapper').append('<div id="'+hash+'" class="swiper-slide "></div>');
@@ -122,7 +132,7 @@ var openSection = {
      if(swiper){
        swiper.destroy(true, true);
      };
-     generateSlider($(".swiper-slide").length);
+     generateSlider($(".swiper-slide").length,selectSection);
      //$(".preloadContentSection").hide();
   }
 };
@@ -178,7 +188,6 @@ function scrollDetect(){
 }
 
 function sectionsActivate(){
-
   $('.homeClass').on(custom_event,function(){
     intentOpen('home');
    // moveTooltip($(this).position().top);

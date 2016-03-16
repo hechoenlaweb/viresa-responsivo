@@ -2,10 +2,8 @@
   width: 100%;
   height: 100%;
   overflow-y:  auto !important;
- // @extend %touchMobile;
-}
-.backgroundAboutUs{
   text-align: center;
+ // @extend %touchMobile;
 }
 .aboutUs1{
   position: relative;
@@ -33,7 +31,14 @@
 }
 ///////////////////////
 .backgroundAboutUs2{
-  position: absolute;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  @include prefix('transition',$transitionValue);
+}
+.backgroundAboutUs3{
+  position:relative;
   width: 50%;
   height: 100%;
   left: 0;
@@ -41,8 +46,8 @@
 }
 .textAboutUs2{
   position: absolute;
-  left: 50%;
-  width: 50%;
+  left: 0%;
+  width: 100%;
   height: auto;
   min-height: 100% !important;
   background-color: $rojo;

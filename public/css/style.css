@@ -99,7 +99,6 @@ body {
 .swipeCustom {
   position: absolute;
   bottom: 25px;
-  display: inline-block !important;
   display: none;
   z-index: 992;
 }
@@ -682,9 +681,6 @@ div{
   width: 100%;
   height: 100%;
   overflow-y: auto !important;
-}
-
-.backgroundAboutUs {
   text-align: center;
 }
 
@@ -716,7 +712,19 @@ div{
 }
 
 .backgroundAboutUs2 {
-  position: absolute;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.backgroundAboutUs3 {
+  position: relative;
   width: 50%;
   height: 100%;
   left: 0;
@@ -729,8 +737,8 @@ div{
 
 .textAboutUs2 {
   position: absolute;
-  left: 50%;
-  width: 50%;
+  left: 0%;
+  width: 100%;
   height: auto;
   min-height: 100% !important;
   background-color: #ac2c3f;
@@ -953,7 +961,7 @@ div{
     clear: both;
   }
 
-  .textAboutUs2 {
+  .textAboutUs3 {
     position: static;
     left: 0;
     width: 100%;
@@ -1037,7 +1045,7 @@ div{
   }
 
   #leftMenu {
-    margin-left: 30px;
+    margin-left: 40px;
     font-size: 1.8em;
     opacity: 1;
   }
@@ -1154,11 +1162,11 @@ div{
 
   .swipeCustom {
     left: 60px;
-    width: 100%;
-    background-color: white;
+    width: 60%;
     bottom: 0px;
     padding: 10px;
     padding-bottom: 25px;
+    display: inline-block !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1208,7 +1216,7 @@ div{
   }
 
   #leftMenu {
-    margin-left: 20px;
+    margin-left: 30px;
     opacity: 1;
   }
 

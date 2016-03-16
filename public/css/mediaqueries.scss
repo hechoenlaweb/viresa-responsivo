@@ -125,7 +125,7 @@ $heightMin:'(max-height:800px)';
       top: 0;
       clear: both;
     }
-    .textAboutUs2{
+    .textAboutUs3{
       position: static;
       left:0;
       width: 100%;
@@ -183,7 +183,7 @@ $heightMin:'(max-height:800px)';
     bottom: 20px;
   }
   #leftMenu{
-    margin-left: 30px;
+    margin-left: 40px;
     font-size: 1.8em;
     opacity: 1;
   }
@@ -273,11 +273,11 @@ $heightMin:'(max-height:800px)';
 //////////Subsections
   .swipeCustom{
       left: $surplus;
-      width: 100%;
-      background-color:$blanco;
+      width: 60%;
       bottom: 0px;
       padding: 10px;
       padding-bottom: 25px;
+      display: inline-block !important;
   }
 
 }
@@ -301,7 +301,7 @@ $heightMin:'(max-height:800px)';
     right: $surplus;
   }
   #leftMenu{
-    margin-left: 20px;
+    margin-left: 30px;
     opacity: 1;
   }
   .backgroundHome{
