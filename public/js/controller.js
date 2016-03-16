@@ -1,6 +1,13 @@
 var swiper;
 ///////////////////////
 var custom_event;
+///////////////////////
+
+function globalCatch(){
+  $('.nameBullet').hide();
+  var selectionBullet = $('.swipeCustom').find('.swiper-pagination-bullet-active').parent();
+  $(selectionBullet).find('.nameBullet').show();
+}
 function loadPage(){
   custom_event = $.support.touch ? "tap" : "click";
   openSection.openUrl('home');
@@ -17,10 +24,11 @@ function loadPage(){
 
 /////////////////////////
 function generateSlider(num){
+  var elementsInteractive  = '.swiper-button-next,.swiper-button-prev,.swiper-pagination,.swipeCustom';
   if(num==1){
-    $('.swiper-button-next,.swiper-button-prev,.swiper-pagination').css('display','none');
+    $(elementsInteractive).css('display','none');
   }else{
-    $('.swiper-button-next,.swiper-button-prev,.swiper-pagination').show();
+    $(elementsInteractive).show();
     };
        swiper = new Swiper('.swiper-container', {
             spaceBetween: 0,
@@ -56,10 +64,14 @@ function generateSlider(num){
 
 var sections = {
   home:['homeSection.html'],
+  homeBullets:['Inicio'],
   aboutUs:['aboutUsSection.html','aboutUsSection2.html'],
+  aboutUsBullets:['Quienes somos','Nuestras uvas'],
   ourFields:['test1.html'],
   ourGrapes:['test2.html']
 }
+
+
 
 function intentOpen(sec){
   TweenMax.set($(".preloadContentSection"),{autoAlpha:1});
@@ -81,6 +93,10 @@ var openSection = {
 
 
    var selectSection = sections[getSection];
+//   var selectSectionBullets = sections[getSection];
+
+
+
    $('.swiper-wrapper').empty();
    var waiting = [];
      for(var value in selectSection){
@@ -165,28 +181,57 @@ function sectionsActivate(){
 
   $('.homeClass').on(custom_event,function(){
     intentOpen('home');
+   // moveTooltip($(this).position().top);
      //openSection.openUrl('home');
      closeMenu(true);
+      subSectionfc($(this).attr('name'));
 
   });
   $('.aboutUsClass').on(custom_event,function(){
+   // moveTooltip($(this).position().top);
      intentOpen('aboutUs');
     // openSection.openUrl('aboutUs');
       closeMenu(true);
+      subSectionfc($(this).attr('name'));
   });
   $('.ourFieldsClass').on(custom_event,function(){
+   // moveTooltip($(this).position().top);
      intentOpen('ourFields');
+      $('.subSection').html($(this).attr('name'));
     // openSection.openUrl('aboutUs');
-      closeMenu(true);
+    //  closeMenu(true);
+     subSectionfc($(this).attr('name'));
   });
   $('.ourGrapesClass').on(custom_event,function(){
+   // moveTooltip($(this).position().top);
      intentOpen('ourGrapes');
     // openSection.openUrl('aboutUs');
-      closeMenu(true);
+      //closeMenu(true);
+     subSectionfc($(this).attr('name'));
   });
   $('.noAvailable').on(custom_event,function(){
-    alert('Sección no disponible.');
+    //alert('Sección no disponible.');
+    subSectionfc($(this).attr('name'));
   });
+
+  $('.fa-circle').mouseover(function(){
+   // alert(1);
+    $('.toolTipContent').show();
+    moveTooltip($(this).position().top,$(this).attr('name'));
+  }).mouseout(function(){
+    $('.toolTipContent').hide();
+  })
+
+
+
+}
+function subSectionfc(nombre){
+  $('.subSection').html('- '+nombre);
+}
+
+function moveTooltip(posY,name){
+  $('.toolTipDiv').html(name);
+  $('.toolTipContent').css('top',(posY+25)+'px');
 
 }
 

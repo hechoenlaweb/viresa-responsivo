@@ -5,6 +5,7 @@ $extraSmall:'(max-width:767px)';
 $small:'(min-width:768px) and (max-width:991px)';
 $medium:'(min-width:992px) and (max-width:1199px)';
 $large:'(min-width:1200px)';
+$heightMin:'(max-height:800px)';
 // !extraSmall
 @media #{$extraSmall}{
   $surplus:0px;
@@ -22,6 +23,7 @@ $large:'(min-width:1200px)';
     margin-left:0;
     color: rgba(255,255,255,1);
     padding: 10px;
+
   }
   #leftMenu{
     opacity: 0;
@@ -61,8 +63,8 @@ $large:'(min-width:1200px)';
   #leftMenu{
       display: none;
   }
-  nav:first-child{
-      background-color: rgba(0,0,0,.2);
+  .menu{
+      background-color: rgba(0,0,0,.5);
   }
   .menuNetwork{
     display: none;
@@ -93,7 +95,8 @@ $large:'(min-width:1200px)';
     font-family: $fuente2;
     font-size: 1.5em;
     display: block !important;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .validateLogo{
     width: 150px;
@@ -127,6 +130,7 @@ $large:'(min-width:1200px)';
       left:0;
       width: 100%;
       height: auto;
+      min-height: 100% !important;
       background-color: $rojo;
       clear: both;
     }
@@ -135,6 +139,16 @@ $large:'(min-width:1200px)';
     padding: 60px;
     margin-top: 0px;
     display: inline-block;
+  }
+
+  //////////Subsections
+  .swipeCustom{
+      left: $surplus;
+      width: 100%;
+      background-color:$blanco;
+      bottom: 0px;
+      padding: 10px;
+      padding-bottom: 25px;
   }
 }
 // !Small
@@ -238,23 +252,33 @@ $large:'(min-width:1200px)';
     .aboutUs1{
       width: 80%;
     }
-     /////////Section2
-    .backgroundAboutUs2{
-      position: static;
+/////////Section2
+  .backgroundAboutUs2{
+    position: static;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    top: 0;
+    clear: both;
+  }
+   .textAboutUs2{
+    position: static;
+    left:0;
+    width: 100%;
+    background-color: $rojo;
+    clear: both;
+    height: auto;
+      min-height: 100% !important;
+  }
+//////////Subsections
+  .swipeCustom{
+      left: $surplus;
       width: 100%;
-      height: 300px;
-      left: 0;
-      top: 0;
-      clear: both;
-    }
-     .textAboutUs2{
-      position: static;
-      left:0;
-      width: 100%;
-      background-color: $rojo;
-      clear: both;
-    }
-
+      background-color:$blanco;
+      bottom: 0px;
+      padding: 10px;
+      padding-bottom: 25px;
+  }
 
 }
 @media #{$medium}{
@@ -301,6 +325,9 @@ $large:'(min-width:1200px)';
   .seccionLinkNetwork{
     display: none;
   }
+  .swipeCustom{
+    left: $surplus;
+  }
 }
 @media #{$large}{
   $surplus:40px;
@@ -346,6 +373,10 @@ $large:'(min-width:1200px)';
   }
   .seccionLinkNetwork{
     display: none;
+  }
+  //Menu subSections
+  .swipeCustom{
+    left: $surplus;
   }
 }
 @media #{$landscapeiPhone} {
@@ -399,7 +430,52 @@ $large:'(min-width:1200px)';
   }
 
 }
+///////Height min
+@media #{$heightMin} {
+////////////Validate age
+  .validateTitle p{
+    font-size: 1.5em;
+    font-family: $fuente2;
+    margin-top: 10px;
+  }
+  .validateText{
+    font-size: 1.2em;
 
+  }
+  .validatePrevents{
+   font-size: .8em;
+  }
+  .validateText, .validateForm, .validateLogo{
+   margin-bottom: 10px ;
+  }
+  .validateForm select{
+    margin-right: 10px;
+  }
+  .validateEnter{
+    font-family: $fuente2;
+    font-size: 1.5em;
+    display: block !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .validateLogo{
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+  }
+  .confirmEnterIn{
+  //   border: 1px solid $rojo;
+  }
+  .validateForm select{
+    width: 60px;
+    height: 45px;
+    font-size: 1em;
+  }
+  .confirmEnterIn{
+    overflow: hidden !important;
+  }
+
+}
 /*
 
 @media screen and (orientation:portrait) {

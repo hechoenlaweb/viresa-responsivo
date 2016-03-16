@@ -5,12 +5,12 @@
   <head>
     <title>Viresa</title>
     <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/controller.min.js?cache=1247"></script>
-    <script src="js/slider/js/swiper.js"></script>
-    <link rel="stylesheet" href="css/style.css?cache=1247">
+    <script src="js/pack.js"></script>
+    <link rel="stylesheet" href="css/style.css?cache=760">
     <link href="https://fonts.googleapis.com/css?family=Vidaloka|Playfair+Display+SC:400,700|Comfortaa:400,300,700|EB+Garamond" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="js/slider/css/swiper.css">
@@ -189,13 +189,13 @@
           <div class="close"><img src="img/close.svg"></div>
           <div class="logoRojo"><img src="img/vinicola-logo-rojo.png" class="homeClass">
             <div class="contenedorLinks">
-              <div class="seccionLink homeClass">HOME</div><br>
-              <div class="seccionLink aboutUsClass">QUÍENES SOMOS</div><br>
-              <div class="seccionLink ourFieldsClass">NUESTROS CAMPOS</div><br>
-              <div class="seccionLink ourGrapesClass">NUESTRAS UVAS</div><br>
-              <div class="seccionLink noAvailable">VINOS LLANO COLORADO</div><br>
-              <div class="seccionLink noAvailable">PREMIOS</div><br>
-              <div class="seccionLink noAvailable">CONTACTO</div>
+              <div name="INICIO" class="seccionLink homeClass">INICIO</div><br>
+              <div name="QUÍENES SOMOS" class="seccionLink aboutUsClass">QUÍENES SOMOS</div><br>
+              <div name="NUESTROS CAMPOS" class="seccionLink ourFieldsClass">NUESTROS CAMPOS</div><br>
+              <div name="NUESTRAS UVAS" class="seccionLink ourGrapesClass">NUESTRAS UVAS</div><br>
+              <div name="VINOS LLANO COLORADO" class="seccionLink noAvailable">VINOS LLANO COLORADO</div><br>
+              <div name="PREMIOS" class="seccionLink noAvailable">PREMIOS</div><br>
+              <div name="CONTACTO" class="seccionLink noAvailable">CONTACTO</div>
               <div class="seccionLinkNetwork"><a href="http://facebook.com" target="_blank">
                   <div class="fa fa-facebook-official icon iconNetwork"></div></a><a href="http://twitter.com" target="_blank">
                   <div class="fa fa-twitter-square icon iconNetwork"></div></a><a href="http://instagram.com" target="_blank">
@@ -206,6 +206,10 @@
       </div>
       <section id="contentSection">
         <!-- .grid__col.grid__col--3-of-12-->
+        <div class="toolTipContent">
+          <div class="toolTip"></div>
+          <div class="toolTipDiv">es un buen ejemplo de texto</div>
+        </div>
         <article id="home">
           <div class="preloadContentSection">
             <div class="logoPreload showInLogoPreload"><img src="img/vinicola-logo.png" width="100%"></div>
@@ -219,17 +223,19 @@
             <div class="swiper-scrollbar"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-            <div class="swiper-wrapper">
-              <!--.swiper-slide Slide1 insertar contenido-->
-            </div>
-            <!---->
+            <div class="swiper-wrapper"></div>
           </div>
+          <div class="clear">
+            <!--.swiper-slide Slide1 insertar contenido-->
+          </div>
+          <!---->
         </article>
       </section>
       <!--top menu-->
       <section>
         <nav class="menu">
-          <div id="topMenu">MENÚ
+          <div id="topMenu">MENÚ&nbsp;
+            <div class="subSection">- INICIO</div>
             <div class="fa fa-ellipsis-v"></div>
           </div>
         </nav>
@@ -238,13 +244,13 @@
       <section>
         <nav class="menu">
           <div id="leftMenu">
-            <div class="fa fa-circle homeClass"></div>
-            <div class="fa fa-circle aboutUsClass"></div>
-            <div class="fa fa-circle ourFieldsClass"></div>
-            <div class="fa fa-circle ourGrapesClass"></div>
-            <div class="fa fa-circle noAvailable"></div>
-            <div class="fa fa-circle noAvailable"></div>
-            <div class="fa fa-circle noAvailable"></div>
+            <div name="INICIO" class="fa fa-circle homeClass"></div>
+            <div name="QUÍENES SOMOS" class="fa fa-circle aboutUsClass"></div>
+            <div name="NUESTROS CAMPOS" class="fa fa-circle ourFieldsClass"></div>
+            <div name="NUESTRAS UVAS" class="fa fa-circle ourGrapesClass"></div>
+            <div name="VINOS LLANO COLORADO" class="fa fa-circle noAvailable"></div>
+            <div name="PREMIOS" class="fa fa-circle noAvailable"></div>
+            <div name="CONTACTO" class="fa fa-circle noAvailable g"></div>
           </div>
         </nav>
         <!--general content-->

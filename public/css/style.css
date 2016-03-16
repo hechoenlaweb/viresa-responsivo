@@ -60,6 +60,10 @@ body {
   user-select: none;
 }
 
+#topMenu * {
+  display: inline-block;
+}
+
 #topMenu, .fa-circle {
   cursor: pointer;
 }
@@ -68,14 +72,21 @@ body {
   color: #b2b2b2 !important;
 }
 
+.subSection {
+  font-size: .8em;
+  opacity: .8;
+}
+
 #indicador {
   position: absolute;
-  z-index: 9999999;
+  z-index: 9999992;
   display: none;
 }
 
 .indicadorAnima {
   -webkit-animation: indicadorAnim 300ms forwards ease-in;
+  -moz-animation: indicadorAnim 300ms forwards ease-in;
+  -o-animation: indicadorAnim 300ms forwards ease-in;
   -ms-animation: indicadorAnim 300ms forwards ease-in;
   animation: indicadorAnim 300ms forwards ease-in;
 }
@@ -88,10 +99,9 @@ body {
 .swipeCustom {
   position: absolute;
   bottom: 25px;
-  left: 50%;
-  margin-left: -100px;
-  display: inline-block;
-  width: 200px;
+  display: inline-block !important;
+  display: none;
+  z-index: 992;
 }
 
 .swipeCustom span {
@@ -108,6 +118,9 @@ body {
   color: #b2b2b2;
   letter-spacing: 20px;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 .iconNetwork:hover {
@@ -115,9 +128,12 @@ body {
 }
 
 #leftMenu .fa-circle {
-  margin-right: 30px;
+  margin-right: 20px;
   color: #ac2c3f;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -127,16 +143,28 @@ body {
 
 #leftMenu {
   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   -webkit-transform-origin: left;
+  -moz-transform-origin: left;
+  -o-transform-origin: left;
   -ms-transform-origin: left;
   transform-origin: left;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
-  margin-left: 10px;
+  margin-left: 20px !important;
+  margin-top: 2% !important;
   display: inline-block;
   opacity: 0;
+}
+
+.fa-ellipsis-v {
+  font-style: italic !important;
 }
 
 .preloadContent {
@@ -173,6 +201,8 @@ body {
 .bar:nth-child(1) {
   background-color: #e9e9e9;
   -webkit-animation: loading 4s linear infinite;
+  -moz-animation: loading 4s linear infinite;
+  -o-animation: loading 4s linear infinite;
   -ms-animation: loading 4s linear infinite;
   animation: loading 4s linear infinite;
 }
@@ -180,6 +210,8 @@ body {
 .bar:nth-child(2) {
   background-color: #d2d2d2;
   -webkit-animation: loading 4s linear 1s infinite;
+  -moz-animation: loading 4s linear 1s infinite;
+  -o-animation: loading 4s linear 1s infinite;
   -ms-animation: loading 4s linear 1s infinite;
   animation: loading 4s linear 1s infinite;
 }
@@ -187,6 +219,8 @@ body {
 .bar:nth-child(3) {
   background-color: #aaaaaa;
   -webkit-animation: loading 4s linear 2s infinite;
+  -moz-animation: loading 4s linear 2s infinite;
+  -o-animation: loading 4s linear 2s infinite;
   -ms-animation: loading 4s linear 2s infinite;
   animation: loading 4s linear 2s infinite;
 }
@@ -203,6 +237,8 @@ body {
 .showInLogoPreload {
   opacity: 0;
   -webkit-animation: AnimlogoPreload 4s ease forwards;
+  -moz-animation: AnimlogoPreload 4s ease forwards;
+  -o-animation: AnimlogoPreload 4s ease forwards;
   -ms-animation: AnimlogoPreload 4s ease forwards;
   animation: AnimlogoPreload 4s ease forwards;
 }
@@ -224,7 +260,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 999999999;
+  z-index: 9999998;
 }
 
 .clear {
@@ -235,10 +271,99 @@ body {
   display: none;
 }
 
-/*
-.fa-ellipsis-v{
-  font-size: .8em;
+.toolTip {
+  width: 0px;
+  height: 0px;
+  border-left: 0px solid transparent;
+  border-right: 15px solid #ac2c3f;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  left: 0px;
+  top: 12px;
+  position: absolute;
 }
+
+.toolTipDiv {
+  display: inline-block;
+  background-color: #ac2c3f;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  padding: 10px;
+  font-family: "Comfortaa", serif;
+  font-size: 1em;
+  color: white;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  clear: both;
+}
+
+.toolTipContent {
+  position: absolute;
+  left: 40px;
+  display: inline-block;
+  width: 300px;
+  z-index: 9999993;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+  display: none;
+}
+
+.fa-circle {
+  background-color: transparent;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  position: relative;
+  border-radius: 100%;
+  background: #000;
+  opacity: 0.2;
+  clear: both;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.swiper-pagination-bullet div {
+  display: inline-block;
+  position: relative;
+  clear: both;
+}
+
+.contBullet {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nameBullet {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  font-family: "Comfortaa", serif;
+  color: #ac2c3f;
+  padding-left: 5px;
+  padding-right: 10px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+/*
+
 */
 /*
 @function strip-unit($value) {
@@ -254,12 +379,17 @@ div{
 .menu {
   position: relative;
   z-index: 100;
+  width: auto;
+  display: inline-block;
 }
 
 #home {
   position: absolute;
   z-index: 99;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
   top: 0;
   left: 0;
@@ -268,6 +398,9 @@ div{
 
 #topMenu {
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
   display: inline-block;
   color: #ac2c3f;
@@ -319,6 +452,8 @@ div{
   top: 50%;
   margin-top: -75px;
   -webkit-animation: logoAnim 2s forwards ease-in-out;
+  -moz-animation: logoAnim 2s forwards ease-in-out;
+  -o-animation: logoAnim 2s forwards ease-in-out;
   -ms-animation: logoAnim 2s forwards ease-in-out;
   animation: logoAnim 2s forwards ease-in-out;
 }
@@ -326,6 +461,8 @@ div{
   width: 100%;
   height: 100%;
   -webkit-animation: logoAnim2 3300ms forwards ease-in-out;
+  -moz-animation: logoAnim2 3300ms forwards ease-in-out;
+  -o-animation: logoAnim2 3300ms forwards ease-in-out;
   -ms-animation: logoAnim2 3300ms forwards ease-in-out;
   animation: logoAnim2 3300ms forwards ease-in-out;
 }
@@ -334,59 +471,32 @@ div{
   height: inherit;
 }
 
-@-webkit-keyframes logoAnim {
-  0% {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
 @keyframes logoAnim {
   0% {
-    -webkit-transform: scale(1.4);
     transform: scale(1.4);
     opacity: 0;
   }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-  }
-}
-@-webkit-keyframes logoAnim2 {
-  0% {
-    -webkit-transform: scale(0.4);
-    transform: scale(0.4);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
   }
 }
 @keyframes logoAnim2 {
   0% {
-    -webkit-transform: scale(0.4);
     transform: scale(0.4);
     opacity: 0;
   }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
 }
 .portrait {
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -414,7 +524,7 @@ div{
   height: 100%;
   background-color: rgba(172, 44, 63, 0.9);
   position: absolute;
-  z-index: 99979;
+  z-index: 99999999979;
   display: none;
   opacity: 0;
 }
@@ -425,6 +535,9 @@ div{
   background-color: white;
   position: absolute;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
   left: 0px;
 }
@@ -435,6 +548,9 @@ div{
   color: #ac2c3f;
   margin-bottom: 15px;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
   display: inline-block;
   cursor: pointer;
@@ -474,11 +590,6 @@ div{
   cursor: pointer;
 }
 
-.swipe-custom {
-  position: relative;
-  left: 30%;
-}
-
 .confirmEnter {
   position: absolute;
   left: 0px;
@@ -493,6 +604,9 @@ div{
 
 .confirmEnter * {
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -607,6 +721,9 @@ div{
   height: 100%;
   left: 0;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -614,9 +731,13 @@ div{
   position: absolute;
   left: 50%;
   width: 50%;
-  height: 100%;
+  height: auto;
+  min-height: 100% !important;
   background-color: #ac2c3f;
   -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -637,6 +758,8 @@ div{
 .test1 {
   background: url("../img/test1.jpg") no-repeat center center;
   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
 }
@@ -644,6 +767,8 @@ div{
 .test2 {
   background: url("../img/test2.jpg") no-repeat center center;
   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;
 }
@@ -660,10 +785,12 @@ div{
     left: 0px;
     top: 0px;
     width: -webkit-calc(100% - 0px);
+    width: -moz-calc(100% - 0px);
     width: -o-calc(100% - 0px);
     width: -ms-calc(100% - 0px);
     width: calc(100% - 0px);
     height: -webkit-calc(100% - 0px);
+    height: -moz-calc(100% - 0px);
     height: -o-calc(100% - 0px);
     height: -ms-calc(100% - 0px);
     height: calc(100% - 0px);
@@ -672,15 +799,19 @@ div{
   .confirmEnterIn {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     left: 0px;
     top: 0px;
     width: -webkit-calc(100% - 0px);
+    width: -moz-calc(100% - 0px);
     width: -o-calc(100% - 0px);
     width: -ms-calc(100% - 0px);
     width: calc(100% - 0px);
     height: -webkit-calc(100% - 0px);
+    height: -moz-calc(100% - 0px);
     height: -o-calc(100% - 0px);
     height: -ms-calc(100% - 0px);
     height: calc(100% - 0px);
@@ -699,6 +830,8 @@ div{
   .backgroundHome {
     background: url("../img/home-mobile.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -706,6 +839,8 @@ div{
   .backgroundAboutUs {
     background: url("../img/about-us-mobile.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -713,6 +848,8 @@ div{
   .backgroundAboutUs2 {
     background: url("../img/about-us-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -746,8 +883,8 @@ div{
     display: none;
   }
 
-  nav:first-child {
-    background-color: rgba(0, 0, 0, 0.2);
+  .menu {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .menuNetwork {
@@ -785,7 +922,8 @@ div{
     font-family: "Comfortaa", serif;
     font-size: 1.5em;
     display: block !important;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .validateLogo {
@@ -820,6 +958,7 @@ div{
     left: 0;
     width: 100%;
     height: auto;
+    min-height: 100% !important;
     background-color: #ac2c3f;
     clear: both;
   }
@@ -829,16 +968,27 @@ div{
     margin-top: 0px;
     display: inline-block;
   }
+
+  .swipeCustom {
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    bottom: 0px;
+    padding: 10px;
+    padding-bottom: 25px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #home {
     left: 60px;
     top: 60px;
     width: -webkit-calc(100% - 120px);
+    width: -moz-calc(100% - 120px);
     width: -o-calc(100% - 120px);
     width: -ms-calc(100% - 120px);
     width: calc(100% - 120px);
     height: -webkit-calc(100% - 120px);
+    height: -moz-calc(100% - 120px);
     height: -o-calc(100% - 120px);
     height: -ms-calc(100% - 120px);
     height: calc(100% - 120px);
@@ -847,15 +997,19 @@ div{
   .confirmEnterIn {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     left: 60px;
     top: 60px;
     width: -webkit-calc(100% - 120px);
+    width: -moz-calc(100% - 120px);
     width: -o-calc(100% - 120px);
     width: -ms-calc(100% - 120px);
     width: calc(100% - 120px);
     height: -webkit-calc(100% - 120px);
+    height: -moz-calc(100% - 120px);
     height: -o-calc(100% - 120px);
     height: -ms-calc(100% - 120px);
     height: calc(100% - 120px);
@@ -891,6 +1045,8 @@ div{
   .backgroundHome {
     background: url("../img/home.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -898,6 +1054,8 @@ div{
   .backgroundAboutUs {
     background: url("../img/about-us.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -905,6 +1063,8 @@ div{
   .backgroundAboutUs2 {
     background: url("../img/about-us-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -988,6 +1148,17 @@ div{
     width: 100%;
     background-color: #ac2c3f;
     clear: both;
+    height: auto;
+    min-height: 100% !important;
+  }
+
+  .swipeCustom {
+    left: 60px;
+    width: 100%;
+    background-color: white;
+    bottom: 0px;
+    padding: 10px;
+    padding-bottom: 25px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -995,10 +1166,12 @@ div{
     left: 40px;
     top: 40px;
     width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
     width: -o-calc(100% - 80px);
     width: -ms-calc(100% - 80px);
     width: calc(100% - 80px);
     height: -webkit-calc(100% - 80px);
+    height: -moz-calc(100% - 80px);
     height: -o-calc(100% - 80px);
     height: -ms-calc(100% - 80px);
     height: calc(100% - 80px);
@@ -1007,15 +1180,19 @@ div{
   .confirmEnterIn {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     left: 40px;
     top: 40px;
     width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
     width: -o-calc(100% - 80px);
     width: -ms-calc(100% - 80px);
     width: calc(100% - 80px);
     height: -webkit-calc(100% - 80px);
+    height: -moz-calc(100% - 80px);
     height: -o-calc(100% - 80px);
     height: -ms-calc(100% - 80px);
     height: calc(100% - 80px);
@@ -1038,6 +1215,8 @@ div{
   .backgroundHome {
     background: url("../img/home.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1045,6 +1224,8 @@ div{
   .backgroundAboutUs {
     background: url("../img/about-us.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1052,6 +1233,8 @@ div{
   .backgroundAboutUs2 {
     background: url("../img/about-us-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1066,6 +1249,10 @@ div{
 
   .seccionLinkNetwork {
     display: none;
+  }
+
+  .swipeCustom {
+    left: 40px;
   }
 }
 @media (min-width: 1200px) {
@@ -1073,10 +1260,12 @@ div{
     left: 40px;
     top: 40px;
     width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
     width: -o-calc(100% - 80px);
     width: -ms-calc(100% - 80px);
     width: calc(100% - 80px);
     height: -webkit-calc(100% - 80px);
+    height: -moz-calc(100% - 80px);
     height: -o-calc(100% - 80px);
     height: -ms-calc(100% - 80px);
     height: calc(100% - 80px);
@@ -1085,15 +1274,19 @@ div{
   .confirmEnterIn {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     left: 40px;
     top: 40px;
     width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
     width: -o-calc(100% - 80px);
     width: -ms-calc(100% - 80px);
     width: calc(100% - 80px);
     height: -webkit-calc(100% - 80px);
+    height: -moz-calc(100% - 80px);
     height: -o-calc(100% - 80px);
     height: -ms-calc(100% - 80px);
     height: calc(100% - 80px);
@@ -1116,6 +1309,8 @@ div{
   .backgroundHome {
     background: url("../img/home.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1123,6 +1318,8 @@ div{
   .backgroundAboutUs {
     background: url("../img/about-us.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1130,6 +1327,8 @@ div{
   .backgroundAboutUs2 {
     background: url("../img/about-us-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1145,16 +1344,22 @@ div{
   .seccionLinkNetwork {
     display: none;
   }
+
+  .swipeCustom {
+    left: 40px;
+  }
 }
 @media (max-width: 767px) and (max-height: 480px) {
   #home {
     left: 0px;
     top: 0px;
     width: -webkit-calc(100% - 0px);
+    width: -moz-calc(100% - 0px);
     width: -o-calc(100% - 0px);
     width: -ms-calc(100% - 0px);
     width: calc(100% - 0px);
     height: -webkit-calc(100% - 0px);
+    height: -moz-calc(100% - 0px);
     height: -o-calc(100% - 0px);
     height: -ms-calc(100% - 0px);
     height: calc(100% - 0px);
@@ -1163,15 +1368,19 @@ div{
   .confirmEnterIn {
     background: none;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
     left: 0;
     top: 0;
     width: -webkit-calc(100% - 0);
+    width: -moz-calc(100% - 0);
     width: -o-calc(100% - 0);
     width: -ms-calc(100% - 0);
     width: calc(100% - 0);
     height: -webkit-calc(100% - 0);
+    height: -moz-calc(100% - 0);
     height: -o-calc(100% - 0);
     height: -ms-calc(100% - 0);
     height: calc(100% - 0);
@@ -1180,6 +1389,8 @@ div{
   .confirmEnter {
     background: url("../img/enter.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1191,6 +1402,8 @@ div{
   .backgroundHome {
     background: url("../img/home-mobile-landscape.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
   }
@@ -1205,6 +1418,8 @@ div{
 
   .mensaje {
     -webkit-animation: textoAnim 600ms forwards ease-in-out;
+    -moz-animation: textoAnim 600ms forwards ease-in-out;
+    -o-animation: textoAnim 600ms forwards ease-in-out;
     -ms-animation: textoAnim 600ms forwards ease-in-out;
     animation: textoAnim 600ms forwards ease-in-out;
     font-family: "Comfortaa", serif;
@@ -1227,6 +1442,53 @@ div{
     display: none;
   }
 }
+@media (max-height: 800px) {
+  .validateTitle p {
+    font-size: 1.5em;
+    font-family: "Comfortaa", serif;
+    margin-top: 10px;
+  }
+
+  .validateText {
+    font-size: 1.2em;
+  }
+
+  .validatePrevents {
+    font-size: .8em;
+  }
+
+  .validateText, .validateForm, .validateLogo {
+    margin-bottom: 10px;
+  }
+
+  .validateForm select {
+    margin-right: 10px;
+  }
+
+  .validateEnter {
+    font-family: "Comfortaa", serif;
+    font-size: 1.5em;
+    display: block !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .validateLogo {
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .validateForm select {
+    width: 60px;
+    height: 45px;
+    font-size: 1em;
+  }
+
+  .confirmEnterIn {
+    overflow: hidden !important;
+  }
+}
 /*
 
 @media screen and (orientation:portrait) {
@@ -1242,27 +1504,8 @@ div{
   }
 }
 */
-@-webkit-keyframes indicadorAnim {
-  0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0;
-    display: none;
-  }
-}
 @keyframes indicadorAnim {
   0% {
-    -webkit-transform: scale(0.5);
     transform: scale(0.5);
     opacity: 0;
   }
@@ -1272,52 +1515,19 @@ div{
   }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0;
     display: none;
-  }
-}
-@-webkit-keyframes textoAnim {
-  0% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
 }
 @keyframes textoAnim {
   0% {
-    -webkit-transform: scale(0.9);
     transform: scale(0.9);
     opacity: 0;
   }
 
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
-  }
-}
-@-webkit-keyframes loading {
-  from {
-    left: 50%;
-    width: 0;
-    z-index: 100;
-  }
-
-  33.3333% {
-    left: 0;
-    width: 100%;
-    z-index: 10;
-  }
-
-  to {
-    left: 0;
-    width: 100%;
   }
 }
 @keyframes loading {
@@ -1338,29 +1548,14 @@ div{
     width: 100%;
   }
 }
-@-webkit-keyframes AnimlogoPreload {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
 @keyframes AnimlogoPreload {
   from {
     opacity: 0;
-    -webkit-transform: scale(0.5);
     transform: scale(0.5);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }

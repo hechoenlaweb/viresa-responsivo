@@ -11,6 +11,8 @@ $transitionValue:all 300ms ease;
 .menu{
   position: relative;
   z-index: 100;
+  width: auto;
+  display: inline-block;
 }
 #home{
 	//background-color: rgba(205, 205, 205, 1);
@@ -132,7 +134,7 @@ $transitionValue:all 300ms ease;
   height: 100%;
   background-color: $rojo2;
   position: absolute;
-  z-index: 99979;
+  z-index: 99999999979;
    display: none;
    opacity: 0;
 
@@ -190,10 +192,6 @@ $transitionValue:all 300ms ease;
 ////////////About us
 .homeClass{
   cursor: pointer;
-}
-.swipe-custom{
-  position: relative;
-  left: 30%;
 }
 @import 'enter.scss';
 @import 'sections.scss';

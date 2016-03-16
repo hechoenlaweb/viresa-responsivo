@@ -3,21 +3,21 @@
 //////////////
 doctype html
 html(lang='en')
-  head: include ./includes/header.jade
+  head: include ./includesjade/header
   body
-    .indicador: include ./includes/indicador.jade
+    .indicador: include ./includesjade/indicador
     .mensaje Para seguir navegando, gira tu celular.
-    .preloadGeneral: include ./includes/preloadGeneral.jade
+    .preloadGeneral: include ./includesjade/preloadGeneral
     main#content.portrait
       .fullMenu
-        .fullMenuLinks: include ./includes/menuLinks.jade
-      section#contentSection: include ./includes/home.jade
+        .fullMenuLinks: include ./includesjade/menuLinks
+      section#contentSection: include ./includesjade/home
       //top menu
       section
-        nav.menu: include ./includes/menu.jade
+        nav.menu: include ./includesjade/menu
         //left menu
       section
-        nav.menu: include ./includes/menuLateral.jade
+        nav.menu: include ./includesjade/menuLateral
         //general content
       section
         .swipeCustom
