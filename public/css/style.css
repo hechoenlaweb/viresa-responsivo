@@ -231,6 +231,10 @@ body {
   clear: both !important;
 }
 
+.hidden {
+  display: none;
+}
+
 /*
 .fa-ellipsis-v{
   font-size: .8em;
@@ -638,7 +642,7 @@ div{
 }
 
 .test2 {
-  background: url("../img/test1.jpg") no-repeat center center;
+  background: url("../img/test2.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -ms-background-size: cover;
   background-size: cover;

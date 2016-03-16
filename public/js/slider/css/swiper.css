@@ -119,8 +119,8 @@
 .swiper-button-next {
   position: absolute;
   top: 50%;
-  width: 27px;
-  height: 44px;
+  width: 35px;
+  height: 35px;
   margin-top: -22px;
   z-index: 10;
   cursor: default;
@@ -129,6 +129,7 @@
   background-size: 27px 44px;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
